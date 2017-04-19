@@ -14,7 +14,7 @@ public class CodeSnippets {
 	}
 	
 	public void  printSomething(){
-		System.out.println("Hello BMC-4");
+		System.out.println("Hello World, Hello BMC-4");
 	}
 
 }
