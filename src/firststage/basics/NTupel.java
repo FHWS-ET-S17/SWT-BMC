@@ -18,9 +18,13 @@ public class NTupel {
 	}
 
 	public void setTupValues(Double[] tupValues) {
+		//TODO Überprüfung von tupDim
 		this.tupValues = tupValues;
+		this.tupDim=this.tupValues.length;
 	}
 
+	
+	
 	public int getTupDim() {
 		return tupDim;
 	}
