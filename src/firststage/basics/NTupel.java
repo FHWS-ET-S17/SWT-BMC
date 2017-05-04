@@ -22,7 +22,6 @@ public class NTupel {
 		this.tupValues = tupValues;
 		this.tupDim=this.tupValues.length;
 	}
-
 	
 	
 	public int getTupDim() {
