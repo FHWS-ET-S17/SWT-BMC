@@ -16,6 +16,12 @@ public class NTupel {
 		else 
 			return tupValues[index];
 	}
+	
+	public void setValueAt(int index, double newValue){
+		if (index < 0 || index >= tupDim) return;
+		tupValues[index]= newValue;
+	
+	}
 
 	public void setTupValues(Double[] tupValues) {
 		//TODO Überprüfung von tupDim
@@ -50,6 +56,15 @@ public class NTupel {
 			return result;
 		}
 		return null;
+	}
+	
+	public double squareSumRoot(){
+		double sum=0;
+		for (int i=0; i<tupDim; i++){
+			//sum = sum + this.tupValues[i]*this.tupValues[i];
+			sum = sum + Math.pow(this.tupValues[i],2.0);
+		}
+		return Math.pow(sum, 0.5);
 	}
 
 	public static void main(String[] args) {
