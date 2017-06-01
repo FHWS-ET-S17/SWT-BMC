@@ -62,5 +62,10 @@ public class NTupelTest {
 		
 	}
 	
+	@Test
+	public void testToString(){
+		System.out.println(t2.toString());
+	}
+	
 
 }

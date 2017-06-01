@@ -1,6 +1,33 @@
 package firststage.basics;
 
+import java.util.Arrays;
+
 public class NTupel {
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + tupDim;
+		result = prime * result + Arrays.hashCode(tupValues);
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		NTupel other = (NTupel) obj;
+		if (tupDim != other.tupDim)
+			return false;
+		if (!Arrays.equals(tupValues, other.tupValues))
+			return false;
+		return true;
+	}
 
 	private int tupDim;
 	private Double tupValues[];
@@ -75,6 +102,14 @@ public class NTupel {
 		System.out.println("tupDim: Erwartet 2, geliefert: " +
 				tup1.getTupDim());
 
+	}
+	@Override
+	public String toString(){
+		String result = this.getClass().getSimpleName();
+		for (int i=0; i<this.getTupDim();i++){
+			result = result.concat("; ").concat(tupValues[i].toString());
+		}
+		return result;
 	}
 
 }

@@ -18,7 +18,8 @@ public class ComplexTest {
 			}
 
 	@Test
-	public void test() {
+	public void testToString() {
+		System.out.println(c1.toString());
 		
 	}
 

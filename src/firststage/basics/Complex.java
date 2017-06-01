@@ -62,4 +62,21 @@ public class Complex extends NTupel {
 				newAbsoluteValue*Math.sin(newPhase));
 	}
 
+	public Complex(int tupDim, double absoluteValue, double phase) {
+		super(tupDim);
+		this.absoluteValue = absoluteValue;
+		this.phase = phase;
+	}
+	
+	@Override
+	public String toString(){
+		String result = this.getClass().getSimpleName();
+		Double r = getReal();
+		Double i = getImag();
+		result = result.concat(" Realteil: ").concat(r.toString());
+		result = result.concat(" Imaginärteil: ").concat(i.toString());
+		
+		return result;
+	}
+
 }
