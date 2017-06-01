@@ -8,17 +8,17 @@ import org.junit.Test;
 public class SClubTest {
 	
 	private SClub sClub1, sClub2;
-	private Member member;
+	private MemberIF member;
 
 	@Before
 	public void setUp() throws Exception {
 		
 		sClub1= new SClub("FC05");
-		member = new Member("Krautschneider", 25,"A");
+		member = new ActiveMember("Krautschneider", 25);
 		sClub2= new SClub("FC05",member);
 		sClub1.addMember(member);
-		sClub1.addMember(new Member("Bauer",30,"A"));
-		sClub1.addMember(new Member("Lahm",35,"P"));
+		sClub1.addMember(new ActiveMember("Bauer",30));
+		sClub1.addMember(new PassiveMember("Lahm",35));
 		
 	}
 
@@ -31,9 +31,9 @@ public class SClubTest {
 	@Test
 	public void testMultyMembers1(){
 		assertEquals(sClub1.memberCount(),3);
-		Member foundMember = null;
+		MemberIF foundMember = null;
 		for (int i=0;i<sClub1.memberCount();i++){
-			Member aMember = sClub1.getMember(i);
+			MemberIF aMember = sClub1.getMember(i);
 			if (aMember.getName().equals("Bauer")){
 				foundMember = aMember;
 			}
@@ -46,6 +46,7 @@ public class SClubTest {
 	
 	@Test
 	public void testMultyMembers2(){
+		sClub1.listMembers();
 		assertTrue(sClub1.removeMember("Lahm"));
 		assertFalse(sClub1.removeMember("Lahm"));
 		assertEquals(sClub1.memberCount(),2);

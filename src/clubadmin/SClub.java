@@ -6,11 +6,11 @@ public class SClub {
 	
 	private String name;
 	
-	private Member member;
-	private ArrayList<Member> members = 
+	private MemberIF member;
+	private ArrayList<MemberIF> members = 
 			new ArrayList<>();
 	
-	public void addMember(Member newMember){
+	public void addMember(MemberIF newMember){
 		members.add(newMember);
 	}
 	
@@ -18,13 +18,13 @@ public class SClub {
 		return members.size();
 	}
 	
-	public Member getMember(int index){
+	public MemberIF getMember(int index){
 		return members.get(index);
 	}
 	
-	public Member getMember(String name){
+	public MemberIF getMember(String name){
 		for (int i=0;i<members.size();i++){
-			Member aMember = members.get(i);
+			MemberIF aMember = members.get(i);
 			if (aMember.getName().equals(name)){
 				return aMember;
 			}
@@ -36,7 +36,7 @@ public class SClub {
 	public double getAvrgAge(){
 		double aAge=0.0;
 		for (int i=0;i<members.size();i++){
-			Member aMember = members.get(i);
+			MemberIF aMember = members.get(i);
 			aAge = aAge + aMember.getAge();
 		}
 		
@@ -44,11 +44,14 @@ public class SClub {
 	}
 	
 	public void listMembers(){
+		System.out.println(getName() + " Mitglieder ---------------------------------------" );
 		for (int i=0;i<members.size();i++){
-			Member aMember = members.get(i);
+			MemberIF aMember = members.get(i);
+			
 			System.out.println(aMember.getName() + "; " 
-			+  aMember.getAge());
+			+  aMember.getAge() + "; " + aMember.getType());
 		}
+		System.out.println("------------------------------------------------------------\n" );
 	}
 	
 	public boolean removeMember(String name){
@@ -68,7 +71,7 @@ public class SClub {
 	}
 	
 	// Constructor-Injection
-	public SClub(String name,Member member) {
+	public SClub(String name,MemberIF member) {
 		super();
 		this.member = member;
 		this.name=name;
@@ -78,12 +81,12 @@ public class SClub {
 		return name;
 	}
 
-	public Member getMember() {
+	public MemberIF getMember() {
 		return member;
 	}
 
 	//setter-Injection
-	public void setMember( Member member) {
+	public void setMember( MemberIF member) {
 		this.member = member;
 	}
 
