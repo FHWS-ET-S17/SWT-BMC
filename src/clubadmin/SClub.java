@@ -1,14 +1,40 @@
 package clubadmin;
 
 import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.List;
 
 public class SClub {
 	
 	private String name;
 	
 	private MemberIF member;
-	private ArrayList<MemberIF> members = 
-			new ArrayList<>();
+	private List<MemberIF> members;
+	
+	
+	
+	public SClub(String name, MemberIF member, List<MemberIF> members) {
+		super();
+		this.name = name;
+		this.member = member;
+		this.members = members;
+		this.setListImpl(new ArrayList<>()); //Default-Implementierung
+		//this.setListImpl(new LinkedList<>());
+		Iterator<MemberIF> mIterator = members.iterator();
+		while (mIterator.hasNext()){
+			MemberIF aMember = mIterator.next();
+			// indiv.  Code
+		}
+		
+	}
+	
+	
+
+
+	public void setListImpl(List<MemberIF> mList){
+		members = mList;
+	}
 	
 	public void addMember(MemberIF newMember){
 		members.add(newMember);

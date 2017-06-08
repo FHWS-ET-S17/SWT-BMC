@@ -13,45 +13,36 @@ public abstract class Member implements MemberIF {
 		this.type=type;
 	}
 
-	/* (non-Javadoc)
-	 * @see clubadmin.MemberIF#getName()
-	 */
+	
 	@Override
 	public String getName() {
 		return name;
 	}
 
-	/* (non-Javadoc)
-	 * @see clubadmin.MemberIF#setName(java.lang.String)
-	 */
+	
 	@Override
 	public void setName(String name) {
 		this.name = name;
 	}
 
-	/* (non-Javadoc)
-	 * @see clubadmin.MemberIF#getAge()
-	 */
 	@Override
 	public int getAge() {
 		return age;
 	}
 
-	/* (non-Javadoc)
-	 * @see clubadmin.MemberIF#getType()
-	 */
+	
 	@Override
 	public String getType() {
 		return type;
 	}
 
-	/* (non-Javadoc)
-	 * @see clubadmin.MemberIF#setType(java.lang.String)
-	 */
+	
 	@Override
 	public void setType(String type) {
 		this.type = type;
 	}
+	
+	public abstract void m1();
 	
 	
 
