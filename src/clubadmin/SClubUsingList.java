@@ -7,7 +7,7 @@ import java.util.Iterator;
 public class SClubUsingList {
 	
 	private List<Member> members = new ArrayList<>();
-	
+
 	
 	public void addMember(Member m){
 		members.add(m);
@@ -25,9 +25,5 @@ public class SClubUsingList {
 			}
 		}
 		return false;
-		
-		
 	}
-	
-
 }

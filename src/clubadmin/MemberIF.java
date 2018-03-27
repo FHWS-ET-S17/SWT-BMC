@@ -6,7 +6,7 @@ public interface MemberIF {
 
 	void setName(String name);
 
-	int getAge();
+	Integer getAge();
 
 	String getType();
 

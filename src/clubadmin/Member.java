@@ -61,7 +61,7 @@ public abstract class Member implements MemberIF, Comparable<Member>{
 	}
 
 	@Override
-	public int getAge() {
+	public Integer getAge() {
 		return age;
 	}
 
